@@ -179,7 +179,7 @@ def main(params):
     # 可视化训练过程中的指标
     # (1) 损失变化图
     plt.figure()
-    plt.rcParams["font.family"] = ["SimHei", "Microsoft YaHei"]
+    plt.rcParams["font.family"] = ["Noto Sans CJK SC", "Microsoft YaHei"]
     plt.title("损失变化图")
     plt.xlabel("训练轮次epoch")
     plt.ylabel("损失Loss")
