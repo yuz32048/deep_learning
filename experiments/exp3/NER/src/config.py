@@ -42,7 +42,7 @@ def get_params():
     params = parser.parse_args()
 
     with open(params.cfg) as f:
-        config = yaml.load(f)
+        config = yaml.safe_load(f)
         for k, v in config.items():
             # for parameters set in the args
             params.__setattr__(k,v)

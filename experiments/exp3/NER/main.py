@@ -3,7 +3,7 @@ import numpy as np
 from tqdm import tqdm
 import random
 from transformers import AutoConfig
-from transformers import AutoModelWithLMHead
+from transformers import AutoModelForTokenClassification
 
 from src.utils import *
 from src.dataloader import *
@@ -21,7 +21,7 @@ class BertTagger(nn.Module):
         # （3）定义一个线性层用于分类预测
         # 提示：参考文档https://huggingface.co/bert-base-cased
         config = AutoConfig.from_pretrained(model_name)
-        self.bert_model = AutoModelWithLMHead.from_pretrained(model_name, config=config)
+        self.bert_model = AutoModelForTokenClassification.from_pretrained(model_name, config=config)
         self.classifier = nn.Linear(hidden_dim, output_dim)
 
     def forward(self, X):
